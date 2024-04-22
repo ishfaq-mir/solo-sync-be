@@ -95,6 +95,7 @@ results
 node_modules
 .node_history
 
+
 ############################
 # Tests
 ############################
@@ -112,3 +113,6 @@ exports
 dist
 build
 .strapi-updater.json
+
+package-lock.json
+
