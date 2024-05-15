@@ -1,3 +1,4 @@
-const strapi = require('@strapi/strapi');
+const strapi = require("@strapi/strapi");
 // @ts-ignore
+//initial commit
 strapi(/* {...} */).start();
