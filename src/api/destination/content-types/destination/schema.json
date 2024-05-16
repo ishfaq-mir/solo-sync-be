@@ -4,7 +4,8 @@
   "info": {
     "singularName": "destination",
     "pluralName": "destinations",
-    "displayName": "destinations"
+    "displayName": "destinations",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,9 +20,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "destination_created": {
-      "type": "datetime"
     }
   }
 }
