@@ -794,6 +794,7 @@ export interface ApiCampaignsCampaigns extends Schema.CollectionType {
     singularName: 'campaigns';
     pluralName: 'campaign';
     displayName: 'campaigns';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,7 +802,6 @@ export interface ApiCampaignsCampaigns extends Schema.CollectionType {
   attributes: {
     slug: Attribute.UID;
     name: Attribute.String;
-    data: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -835,6 +835,7 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     slug: Attribute.UID;
     destination_name: Attribute.String;
     description: Attribute.Text;
+    editor: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -846,6 +847,39 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::destination.destination',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMainPageMainPage extends Schema.CollectionType {
+  collectionName: 'main_pages';
+  info: {
+    singularName: 'main-page';
+    pluralName: 'main-pages';
+    displayName: 'main-pages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    carousel: Attribute.Component<'image-carousels.display-carousel', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-page.main-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-page.main-page',
       'oneToOne',
       'admin::user'
     > &
@@ -940,6 +974,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::campaigns.campaigns': ApiCampaignsCampaigns;
       'api::destination.destination': ApiDestinationDestination;
+      'api::main-page.main-page': ApiMainPageMainPage;
       'api::properties.properties': ApiPropertiesProperties;
       'api::user-enquiries.user-enquiries': ApiUserEnquiriesUserEnquiries;
     }
