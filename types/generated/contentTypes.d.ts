@@ -820,6 +820,38 @@ export interface ApiCampaignsCampaigns extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarouselCarousel extends Schema.CollectionType {
+  collectionName: 'carousels';
+  info: {
+    singularName: 'carousel';
+    pluralName: 'carousels';
+    displayName: 'carousel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    images: Attribute.Media;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDestinationDestination extends Schema.CollectionType {
   collectionName: 'destinations';
   info: {
@@ -833,9 +865,9 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
   };
   attributes: {
     slug: Attribute.UID;
-    destination_name: Attribute.String;
-    description: Attribute.Text;
-    editor: Attribute.RichText;
+    heading: Attribute.String;
+    decription: Attribute.Text;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -854,32 +886,31 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
   };
 }
 
-export interface ApiMainPageMainPage extends Schema.CollectionType {
-  collectionName: 'main_pages';
+export interface ApiMustvisitplaceMustvisitplace extends Schema.CollectionType {
+  collectionName: 'mustvisitplaces';
   info: {
-    singularName: 'main-page';
-    pluralName: 'main-pages';
-    displayName: 'main-pages';
-    description: '';
+    singularName: 'mustvisitplace';
+    pluralName: 'mustvisitplaces';
+    displayName: 'mustvisitplace';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    description: Attribute.Text;
-    carousel: Attribute.Component<'image-carousels.display-carousel', true>;
+    image: Attribute.Media;
+    heading: Attribute.String;
+    description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::main-page.main-page',
+      'api::mustvisitplace.mustvisitplace',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::main-page.main-page',
+      'api::mustvisitplace.mustvisitplace',
       'oneToOne',
       'admin::user'
     > &
@@ -887,33 +918,30 @@ export interface ApiMainPageMainPage extends Schema.CollectionType {
   };
 }
 
-export interface ApiPropertiesProperties extends Schema.CollectionType {
-  collectionName: 'property';
+export interface ApiPropertyProperty extends Schema.CollectionType {
+  collectionName: 'properties';
   info: {
-    singularName: 'properties';
-    pluralName: 'property';
+    singularName: 'property';
+    pluralName: 'properties';
     displayName: 'properties';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID;
-    name: Attribute.String & Attribute.Required;
-    images: Attribute.Media;
-    description: Attribute.Text;
+    image: Attribute.Media;
+    tagline: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::properties.properties',
+      'api::property.property',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::properties.properties',
+      'api::property.property',
       'oneToOne',
       'admin::user'
     > &
@@ -973,9 +1001,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::campaigns.campaigns': ApiCampaignsCampaigns;
+      'api::carousel.carousel': ApiCarouselCarousel;
       'api::destination.destination': ApiDestinationDestination;
-      'api::main-page.main-page': ApiMainPageMainPage;
-      'api::properties.properties': ApiPropertiesProperties;
+      'api::mustvisitplace.mustvisitplace': ApiMustvisitplaceMustvisitplace;
+      'api::property.property': ApiPropertyProperty;
       'api::user-enquiries.user-enquiries': ApiUserEnquiriesUserEnquiries;
     }
   }

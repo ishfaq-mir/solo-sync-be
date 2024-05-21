@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * properties service
+ * carousel service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::properties.properties');
+module.exports = createCoreService('api::carousel.carousel');

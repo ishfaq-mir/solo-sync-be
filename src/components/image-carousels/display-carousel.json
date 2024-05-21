@@ -16,6 +16,16 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "good_field": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

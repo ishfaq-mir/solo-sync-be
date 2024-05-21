@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * properties router
+ * property router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::properties.properties');
+module.exports = createCoreRouter('api::property.property');

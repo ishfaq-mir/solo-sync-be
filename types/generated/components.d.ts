@@ -8,6 +8,8 @@ export interface ImageCarouselsDisplayCarousel extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media;
+    description: Attribute.Text;
+    good_field: Attribute.Media;
   };
 }
 
