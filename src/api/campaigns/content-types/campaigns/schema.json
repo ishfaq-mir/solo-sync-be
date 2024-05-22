@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign",
+  "info": {
+    "singularName": "campaigns",
+    "pluralName": "campaign",
+    "displayName": "campaigns",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "destination",
     "pluralName": "destinations",
-    "displayName": "destinations"
+    "displayName": "destinations",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +15,21 @@
     "slug": {
       "type": "uid"
     },
-    "destination_name": {
+    "heading": {
       "type": "string"
     },
-    "description": {
+    "decription": {
       "type": "text"
     },
-    "destination_created": {
-      "type": "datetime"
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

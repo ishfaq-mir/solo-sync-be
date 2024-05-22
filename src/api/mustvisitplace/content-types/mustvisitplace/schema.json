@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mustvisitplaces",
+  "info": {
+    "singularName": "mustvisitplace",
+    "pluralName": "mustvisitplaces",
+    "displayName": "mustvisitplace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}
