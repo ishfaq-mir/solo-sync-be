@@ -4,7 +4,8 @@
   "info": {
     "singularName": "property",
     "pluralName": "properties",
-    "displayName": "properties"
+    "displayName": "properties",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,16 +13,23 @@
   "pluginOptions": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "tagline": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "ahref": {
       "type": "string"
     }
   }

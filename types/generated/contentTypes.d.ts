@@ -924,6 +924,7 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     singularName: 'property';
     pluralName: 'properties';
     displayName: 'properties';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -931,6 +932,8 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
   attributes: {
     image: Attribute.Media;
     tagline: Attribute.String;
+    buttonText: Attribute.String;
+    ahref: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
