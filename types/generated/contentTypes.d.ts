@@ -934,6 +934,7 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     tagline: Attribute.String;
     buttonText: Attribute.String;
     ahref: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

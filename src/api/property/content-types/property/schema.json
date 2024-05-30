@@ -17,10 +17,7 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "tagline": {
@@ -31,6 +28,9 @@
     },
     "ahref": {
       "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
