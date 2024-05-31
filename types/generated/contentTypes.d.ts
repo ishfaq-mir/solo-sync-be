@@ -953,6 +953,39 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
   };
 }
 
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
+  info: {
+    singularName: 'review';
+    pluralName: 'reviews';
+    displayName: 'reviews';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    designation: Attribute.String;
+    description: Attribute.Text;
+    profilePic: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserEnquiriesUserEnquiries extends Schema.CollectionType {
   collectionName: 'user_enquiry';
   info: {
@@ -1009,6 +1042,7 @@ declare module '@strapi/types' {
       'api::destination.destination': ApiDestinationDestination;
       'api::mustvisitplace.mustvisitplace': ApiMustvisitplaceMustvisitplace;
       'api::property.property': ApiPropertyProperty;
+      'api::review.review': ApiReviewReview;
       'api::user-enquiries.user-enquiries': ApiUserEnquiriesUserEnquiries;
     }
   }
