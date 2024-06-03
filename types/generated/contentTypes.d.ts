@@ -867,7 +867,7 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     slug: Attribute.UID;
     heading: Attribute.String;
     decription: Attribute.Text;
-    image: Attribute.Media;
+    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
